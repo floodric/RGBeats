@@ -5,10 +5,10 @@
     tools:context=".MainActivity" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/soundButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Take a Photo" 
-        android:onClick="takePicture" />
+        android:text="Play a sound" 
+        android:onClick="playSound" />
 
 </RelativeLayout>
