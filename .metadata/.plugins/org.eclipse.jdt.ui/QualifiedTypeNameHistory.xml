@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="com.example.rgbeats.R.id"/>
+<fullyQualifiedTypeName name="android.media.AudioManager"/>
+<fullyQualifiedTypeName name="android.content.res.AssetManager"/>
+<fullyQualifiedTypeName name="android.media.SoundPool.OnLoadCompleteListener"/>
 </qualifiedTypeNameHistroy>

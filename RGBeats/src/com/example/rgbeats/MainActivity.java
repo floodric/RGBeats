@@ -9,12 +9,15 @@ import android.view.View;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
 import android.widget.Toast;
 import android.graphics.Bitmap;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.SoundPool;
+import android.media.SoundPool.OnLoadCompleteListener;
 import android.util.Log;
 import android.widget.ImageView;
-import java.lang.Math;
 import java.util.Random;
 
 public class MainActivity extends Activity {
@@ -24,12 +27,22 @@ public class MainActivity extends Activity {
 	public String newsongname;
 	public boolean newsong=false;
 	public AssetFileDescriptor afd;
-	   public MediaPlayer mp;
+	public MediaPlayer mp;
+	public SoundPool sp;
+	public boolean spactive=false;
+	public int[] streamids = new int[3];
+	//public File sdpath = getExternalStorageDirectory();
+	AssetManager am;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+       // am=new AssetManager();
+        am=this.getAssets();
         mp=new MediaPlayer();
+        sp=new SoundPool(5,AudioManager.STREAM_MUSIC,0);
+        //afd = new AssetFileDescriptor();
         mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
 			@Override
 			public void onCompletion(MediaPlayer mp){
@@ -77,8 +90,14 @@ public class MainActivity extends Activity {
 			}
 		});
       //  colors[0]=colors[1]=colors[2]='\0';
+        sp.setOnLoadCompleteListener(new OnLoadCompleteListener(){
+        	public void onLoadComplete(SoundPool sp, int sampleid, int status){
+        		if(status==0){
+        			sp.play(sampleid, (float)1, (float)1, currp-1, -1, 1);
+        		}
+        	}
+        });
     }
-    
     
     public void takePicture(View view) {
     	Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
@@ -157,7 +176,12 @@ public class MainActivity extends Activity {
 			}
 			currp++;
 		}
-		playSound();
+		try {
+			playSoundPool();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     @Override
@@ -166,10 +190,6 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
-    
-    public int count = 0;
-    
- 
     
     public void playSound() {
     	//Toast.makeText(this, "Button Pressed", Toast.LENGTH_LONG).show();
@@ -214,17 +234,102 @@ public class MainActivity extends Activity {
 			
 			newsong=false;
 			mp.start();
+    	
     	}
-    	
-    	
-    	
-		
-		
-		
+    }
+   
+    public void playpause(){
+    	if(mp.isPlaying()){
+    		mp.pause();
+    	}
+    	else{
+    		assert(!mp.isPlaying());
+    		mp.start();
+    	}
     }
     
+    public void killtrack(int i){
+    	assert(0<=i && i<=2);
+    	//TODO switch file
+    	if(i==0){
+    		colors=new char[3];
+    		currp=0;
+    		picture = new  boolean[3];
+    		mp.stop();mp.reset();
+    		//DEAL WITH PICTURES TODO
+    	}else if(i==1){
+    		if(colors[i]=='R'){
+    			colors[i]='1';
+    		}else if(colors[i]=='G'){
+    			colors[i]='2';
+    		}else if(colors[i]=='B'){
+    			colors[i]='3';
+    		}
+    		currp=1;
+    		// DEAL WITH PICTURES
+    	}else{
+    		colors[i]=0;
+    		currp=2;
+    		//DEAL WITH PICTURES
+    	}
+    }
     
-//    @Override
+    //TODO get phone volume
+    public void playSoundPool() throws IOException {
+    	//AssetManager am=this.getAssets();
+        //Toast.makeText(this, "Button Pressed", Toast.LENGTH_LONG).show();
+        colors[0]='G';
+        String filename=new String(colors,0,currp);
+        Toast.makeText(this,filename+" "+((Integer)(filename.length())).toString() ,Toast.LENGTH_LONG).show();	
+        if (spactive){
+        	Toast.makeText(this,filename+" "+((Integer)(filename.length())).toString() ,Toast.LENGTH_LONG).show();
+        	streamids[currp-1]=sp.load("./assets/Sounds/"+filename+".mp3", currp-1);
+		//	sp.play(streamids[currp-1], (float)1, (float)1, currp-1, -1, 1);
+        }
+        else{
+        	streamids[currp-1]=sp.load("./assets/Sounds/"+filename+".mp3", currp-1);
+			//-sp.play(streamids[currp-1], (float)1, (float)1, currp-1, -1, 1);
+			spactive=!spactive;
+        }
+    }
 	
+    public void playpausepool(){
+    	if(spactive){
+    		sp.autoPause();
+    		spactive=!spactive;
+    	}
+    	else{
+    		sp.autoResume();
+    		spactive=!spactive;
+    	}
+    }
+    
+    public void killpooltrack(int i){
+    	assert(0<=i && i<=2);
+    	//TODO switch file
+    	if(i==0){
+    		colors=new char[3];
+    		currp=0;
+    		picture = new  boolean[3];
+    		mp.stop();mp.reset();
+    		//DEAL WITH PICTURES TODO
+    	}else if(i==1){
+    		if(colors[i]=='R'){
+    			colors[i]='1';
+    		}else if(colors[i]=='G'){
+    			colors[i]='2';
+    		}else if(colors[i]=='B'){
+    			colors[i]='3';
+    		}
+    		currp=1;
+    		// DEAL WITH PICTURES
+    	}else{
+    		colors[i]=0;
+    		currp=2;
+    		//DEAL WITH PICTURES
+    	}
+    	spactive=!spactive;
+    }
+    
 }
 
