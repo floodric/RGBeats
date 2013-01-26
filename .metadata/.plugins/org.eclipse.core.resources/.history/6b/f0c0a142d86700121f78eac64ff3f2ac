@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get a picture" 
+        android:onClick="getPicture" />
+    
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pause/Play" 
+        android:onClick="playpause" />
+
+    
+<ImageView
+    android:id="@+id/pictureImage"
+    android:paddingTop="100dip"
+    android:paddingLeft="100dip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+<ImageView
+    android:id="@+id/pictureImage1"
+    android:paddingTop="200dip"
+    android:paddingLeft="100dip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+<ImageView
+    android:id="@+id/pictureImage2"
+    android:paddingTop="300dip"
+    android:paddingLeft="100dip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+<Button
+    android:id="@+id/button1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginRight="21dp"
+    android:onClick="takePicture"
+    android:text="Take a Photo" />
+
+</RelativeLayout>

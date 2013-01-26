@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take a Photo" 
+        android:onClick="takePicture" />
+
+    
+<ImageView
+    android:id="@+id/pictureImage"
+    android:paddingTop="100dip"
+    android:paddingLeft="100dip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+<ImageView
+    android:id="@+id/pictureImage1"
+    android:paddingTop="200dip"
+    android:paddingLeft="100dip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+<ImageView
+    android:id="@+id/pictureImage2"
+    android:paddingTop="300dip"
+    android:paddingLeft="100dip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+</RelativeLayout>

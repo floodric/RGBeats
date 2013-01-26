@@ -1,0 +1,344 @@
+package com.example.rgbeats;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.content.Intent;
+import android.widget.Toast;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.widget.ImageView;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
+import android.util.Log;
+import java.lang.Math;
+import java.util.Random;
+import android.view.View.OnClickListener;
+
+public class MainActivity extends Activity {
+	
+	
+
+	boolean picture = false;
+	boolean picture1 = false;
+    boolean picture2 = false;
+    int rgb = 0;
+	private OnClickListener buttonclickhandler;
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        ImageView pictureView = (ImageView) findViewById(R.id.imageView);
+        pictureView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            	if (picture == false){
+            		Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+	     	       	int CAMERA_PIC_REQUEST = 1337;
+	     	        startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
+         	    }
+            }
+       }); 
+        
+
+	   final ImageView play1 = (ImageView) findViewById(R.id.play1);
+	   play1.setClickable(true);
+	   play1.setOnClickListener(new View.OnClickListener() {
+	       @Override
+	       public void onClick(View view) {
+	    	   if (picture == true){
+	    		   play1.setImageResource(R.drawable.ic_launcher);
+	    	   }
+	      }
+	   });
+	   
+	   final ImageView pause1 = (ImageView) findViewById(R.id.pause1);
+	   pause1.setClickable(true);
+	   pause1.setOnClickListener(new View.OnClickListener() {
+	       @Override
+	       public void onClick(View view) {
+	    	   if (picture == true){
+	    		   pause1.setImageResource(R.drawable.ic_launcher);
+	    	   }
+	       }
+	   });
+	   
+	   final ImageView stop1 = (ImageView) findViewById(R.id.stop1);
+	   stop1.setClickable(true);
+	   stop1.setOnClickListener(new View.OnClickListener() {
+	       @Override
+	       public void onClick(View view) {
+	    	   if (picture == true){
+	    		   stop1.setImageResource(R.drawable.ic_launcher);
+	    	   }
+	       }
+	   });
+        
+       ImageView pictureView1 = (ImageView) findViewById(R.id.imageView1);
+       pictureView1.setOnClickListener(new View.OnClickListener() {
+    	   @Override
+           public void onClick(View view) {
+    		   if (picture == true && picture1 == false){
+    			   Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+	     	       int CAMERA_PIC_REQUEST = 1337;
+	     	       startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
+         	   }
+           }
+       }); 
+        
+       final ImageView play2 = (ImageView) findViewById(R.id.play2);
+ 	   play2.setClickable(true);
+ 	   play2.setOnClickListener(new View.OnClickListener() {
+ 		   @Override
+ 	       public void onClick(View view) {
+ 			   if (picture1 == true){
+ 				   play2.setImageResource(R.drawable.ic_launcher);
+ 	    	   }
+ 	       }
+ 	   });
+ 	   
+ 	   final ImageView pause2 = (ImageView) findViewById(R.id.pause2);
+ 	   pause2.setClickable(true);
+ 	   pause2.setOnClickListener(new View.OnClickListener() {
+ 	       @Override
+ 	       public void onClick(View view) {
+ 	    	   if (picture1 == true){
+ 	    		   pause2.setImageResource(R.drawable.ic_launcher);
+ 	    	   }
+ 	       }
+ 	   });
+ 	   
+ 	   final ImageView stop2 = (ImageView) findViewById(R.id.stop2);
+ 	   stop2.setClickable(true);
+ 	   stop2.setOnClickListener(new View.OnClickListener() {
+ 	       @Override
+ 	       public void onClick(View view) {
+ 	    	   if (picture1 == true){
+ 	    		   stop2.setImageResource(R.drawable.ic_launcher);
+ 	    	   }
+ 	       }
+ 	   }); 
+        
+       ImageView pictureView2 = (ImageView) findViewById(R.id.imageView2);
+       pictureView2.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+        	   if (picture == true && picture1 == true && picture2 == false){
+        		   Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+	     	       int CAMERA_PIC_REQUEST = 1337;
+	     	       startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
+         	   }
+           }
+       }); 
+    
+       final ImageView play3 = (ImageView) findViewById(R.id.play3);
+	   play3.setClickable(true);
+	   play3.setOnClickListener(new View.OnClickListener() {
+	       @Override
+	       public void onClick(View view) {
+	    	   if (picture2 == true){
+	    		   play3.setImageResource(R.drawable.ic_launcher);
+	    	   }
+	      }
+	   });
+	   
+	   final ImageView pause3 = (ImageView) findViewById(R.id.pause3);
+	   pause3.setClickable(true);
+	   pause3.setOnClickListener(new View.OnClickListener() {
+	       @Override
+	       public void onClick(View view) {
+	    	   if (picture2 == true){
+	    		   pause3.setImageResource(R.drawable.ic_launcher);
+	    	   }
+	       }
+	   });
+	   
+	   final ImageView stop3 = (ImageView) findViewById(R.id.stop3);
+	   stop3.setClickable(true);
+	   stop3.setOnClickListener(new View.OnClickListener() {
+	       @Override
+	       public void onClick(View view) {
+	    	   if (picture2 == true){
+	    		   stop3.setImageResource(R.drawable.ic_launcher);
+	    	   }
+	       }
+	   });
+    }
+       
+        @Override
+    	protected void onActivityResult(int requestCode, int resultCode, Intent data){
+    		super.onActivityResult(requestCode, resultCode, data);
+    		int CAMERA_PIC_REQUEST = 1337;
+    		if (data != null){
+    			if (requestCode == CAMERA_PIC_REQUEST) {
+    			    Bitmap newPicture = (Bitmap) data.getExtras().get("data"); 
+    			    int[] pixels = new int[newPicture.getHeight()*newPicture.getWidth()];
+    	            newPicture.getPixels(pixels, 0, newPicture.getWidth(), 0, 0, newPicture.getWidth(), newPicture.getHeight());
+    	            Bitmap resizedBitmap = Bitmap.createScaledBitmap(newPicture, 140, 140, false);
+    	            int red; int blue; int green; int totalRed = 0; int totalGreen = 0; int totalBlue = 0;
+    	            int height = newPicture.getHeight();
+    	            int width = newPicture.getWidth();
+    				for (int i = 0; i < height*width; i++){
+    					red = (pixels[i] & 0xFF0000) >> 16;
+    	            	green = (pixels[i] & 0xFF00) >> 8;
+    	            	blue = (pixels[i] & 0xFF);
+    	            	totalRed += red; 
+    	            	totalBlue += blue; 
+    	            	totalGreen += green;
+    				}
+    				totalRed = totalRed / (height*width);
+    				totalBlue = totalBlue / (height*width);
+    				totalGreen = totalGreen / (height*width);	
+    			    int difference1 = totalRed - totalGreen;
+    			    int difference2 = totalRed - totalBlue;
+    				if ((-20 < difference1 && difference1 < 20) && (-20 < difference2 && difference2 < 20)){
+    					Random rand = new Random();
+    					int randomNumber = rand.nextInt(3-0);
+    					if (randomNumber == 0) {
+    						rgb = 0; 
+    					} else if (randomNumber == 1){
+    						rgb = 1;
+    					} else {rgb = 2;}
+    			    } else if (totalRed >= totalBlue && totalRed >= totalGreen){
+    	                rgb = 0;  
+    	            } else if (totalGreen >= totalBlue && totalGreen >= totalRed){
+    	            	rgb = 1;
+    	            } else {
+    	            	rgb = 2;
+    	            }
+    				if (picture == false){
+    					ImageView pictureView = (ImageView) findViewById(R.id.imageView);
+    					if (rgb == 0){pictureView.setImageResource(R.drawable.rock_rhythm_and_bass);}
+    					else if (rgb == 1){pictureView.setImageResource(R.drawable.electro_rhythm_and_base);}
+    					else {pictureView.setImageResource(R.drawable.jazz_rhythm_and_bass);}
+    					RelativeLayout.LayoutParams params11 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					params11.topMargin = 240;
+    					pictureView.setLayoutParams(params11);
+    			        
+    			        ImageView newPicture1 = (ImageView) findViewById(R.id.newPicture1);
+    			        newPicture1.setImageBitmap(resizedBitmap);
+    			        RelativeLayout.LayoutParams params12 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					params12.topMargin = 247;
+    					params12.leftMargin = 23;
+    					newPicture1.setLayoutParams(params12);
+    					
+    					ImageView newPlay1 = (ImageView) findViewById(R.id.play1);
+    					newPlay1.setImageResource(R.drawable.button__play);
+    					RelativeLayout.LayoutParams playParam1 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					playParam1.topMargin = 270;
+    					playParam1.leftMargin = 345;
+    					newPlay1.setLayoutParams(playParam1);
+    					
+    					ImageView newPause1 = (ImageView) findViewById(R.id.pause1);
+    					newPause1.setImageResource(R.drawable.button__pause);
+    					RelativeLayout.LayoutParams pauseParam1 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					pauseParam1.topMargin = 270;
+    					pauseParam1.leftMargin = 380;
+    					newPause1.setLayoutParams(pauseParam1);
+    					
+    					ImageView newStop1 = (ImageView) findViewById(R.id.stop1);
+    					newStop1.setImageResource(R.drawable.button__stop);
+    					RelativeLayout.LayoutParams stopParam1 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					stopParam1.topMargin = 270;
+    					stopParam1.leftMargin = 415;
+    					newStop1.setLayoutParams(stopParam1);
+    			        
+    			        picture = true;
+    				} else if (picture1 == false){
+    					ImageView pictureView1 = (ImageView) findViewById(R.id.imageView1);
+    					if (rgb == 0){pictureView1.setImageResource(R.drawable.rock_accompaniment);}
+    					else if (rgb == 1){pictureView1.setImageResource(R.drawable.electro_accompaniment);}
+    					else {pictureView1.setImageResource(R.drawable.jaxx_accompaniment);}
+    					RelativeLayout.LayoutParams params21 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					params21.topMargin = 413;
+    					pictureView1.setLayoutParams(params21);
+    					
+    					ImageView newPicture2 = (ImageView) findViewById(R.id.newPicture2);
+    			        newPicture2.setImageBitmap(resizedBitmap);
+    			        RelativeLayout.LayoutParams params22 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					params22.topMargin = 427;
+    					params22.leftMargin = 23;
+    					newPicture2.setLayoutParams(params22);
+    					
+    					ImageView newPlay2 = (ImageView) findViewById(R.id.play2);
+    					newPlay2.setImageResource(R.drawable.button__play);
+    					RelativeLayout.LayoutParams playParam2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					playParam2.topMargin = 443;
+    					playParam2.leftMargin = 345;
+    					newPlay2.setLayoutParams(playParam2);
+    					
+    					ImageView newPause2 = (ImageView) findViewById(R.id.pause2);
+    					newPause2.setImageResource(R.drawable.button__pause);
+    					RelativeLayout.LayoutParams pauseParam2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					pauseParam2.topMargin = 443;
+    					pauseParam2.leftMargin = 380;
+    					newPause2.setLayoutParams(pauseParam2);
+    					
+    					ImageView newStop2 = (ImageView) findViewById(R.id.stop2);
+    					newStop2.setImageResource(R.drawable.button__stop);
+    					RelativeLayout.LayoutParams stopParam2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					stopParam2.topMargin = 443;
+    					stopParam2.leftMargin = 415;
+    					newStop2.setLayoutParams(stopParam2);
+    					
+    			        picture1 = true;
+    				} else if (picture2 == false){
+    					ImageView pictureView2 = (ImageView) findViewById(R.id.imageView2);
+    					if (rgb == 0){pictureView2.setImageResource(R.drawable.rock_lead);}
+    					else if (rgb == 1){pictureView2.setImageResource(R.drawable.electro_lead);}
+    					else {pictureView2.setImageResource(R.drawable.jazz_lead);}
+    					RelativeLayout.LayoutParams params31 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					params31.topMargin = 586;
+    					pictureView2.setLayoutParams(params31);
+    					
+    					ImageView newPicture3 = (ImageView) findViewById(R.id.newPicture3);
+    			        newPicture3.setImageBitmap(resizedBitmap);
+    			        RelativeLayout.LayoutParams params32 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					params32.topMargin = 608;
+    					params32.leftMargin = 23;
+    					newPicture3.setLayoutParams(params32);
+    					
+    					ImageView newPlay3 = (ImageView) findViewById(R.id.play3);
+    					newPlay3.setImageResource(R.drawable.button__play);
+    					RelativeLayout.LayoutParams playParam3 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					playParam3.topMargin = 616;
+    					playParam3.leftMargin = 345;
+    					newPlay3.setLayoutParams(playParam3);
+    					
+    					ImageView newPause3 = (ImageView) findViewById(R.id.pause3);
+    					newPause3.setImageResource(R.drawable.button__pause);
+    					RelativeLayout.LayoutParams pauseParam3 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					pauseParam3.topMargin = 616;
+    					pauseParam3.leftMargin = 380;
+    					newPause3.setLayoutParams(pauseParam3);
+    					
+    					ImageView newStop3 = (ImageView) findViewById(R.id.stop3);
+    					newStop3.setImageResource(R.drawable.button__stop);
+    					RelativeLayout.LayoutParams stopParam3 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+    					stopParam3.topMargin = 616;
+    					stopParam3.leftMargin = 415;
+    					newStop3.setLayoutParams(stopParam3);
+    					
+    					picture2 = true;
+    				}
+    			}
+    		}
+        }
+        
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
+        
+    
+}
+    
+
+
