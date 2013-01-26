@@ -130,13 +130,7 @@
 
 </RelativeLayout>
 
-<ImageView
-    android:id="@+id/header"
-    android:layout_width="356dp"
-    android:layout_height="wrap_content"
-    android:layout_x="-19dp"
-    android:layout_y="-22dp"
-    android:src="@drawable/header" />
+<!--   waehiawe;ohiaew;ohwleah;iaewhiawehi -->
 
 <ImageView
     android:id="@+id/spacer"
@@ -145,5 +139,42 @@
     android:layout_x="1dp"
     android:layout_y="-13dp"
     android:src="@drawable/spacer" />
+
+<ImageView
+    android:id="@+id/header"
+    android:layout_width="356dp"
+    android:layout_height="wrap_content"
+    android:layout_x="-2dp"
+    android:layout_y="-24dp"
+    android:src="@drawable/header" />
+
+<ImageView
+    android:id="@+id/nav_buttons_dropbox"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_x="5dp"
+    android:layout_y="-4dp"
+    android:clickable="true"
+    android:src="@drawable/nav_buttons_dropbox" />
+
+<ImageView
+    android:id="@+id/nav_buttons_facebook"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_x="274dp"
+    android:layout_y="-3dp"
+    android:clickable="true"
+    android:src="@drawable/nav_buttons_facebook" />
+
+<ImageView
+    android:id="@+id/nav_buttons_cameraroll"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_x="236dp"
+    android:layout_y="3dp"
+    android:clickable="true"
+    android:src="@drawable/nav_buttons_cameraroll" />
+
+<!--   waehiawe;ohiaew;ohwleah;iaewhiawehi -->
 
 </AbsoluteLayout>

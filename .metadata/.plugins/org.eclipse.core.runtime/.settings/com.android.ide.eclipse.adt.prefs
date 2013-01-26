@@ -2,5 +2,5 @@ com.android.ide.eclipse.adt.fixLegacyEditors=1
 com.android.ide.eclipse.adt.sdk=/home/floodric/programming/adt-bundle-linux-x86_64/sdk
 com.android.ide.eclipse.adt.xmlEditor=true
 design.palette.flyout.width=172
-design.structure.flyout.width=190
+design.structure.flyout.width=453
 eclipse.preferences.version=1

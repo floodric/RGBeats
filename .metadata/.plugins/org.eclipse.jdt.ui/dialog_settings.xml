@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="/home/floodric/programming/dropbox-java-sdk-1.5.3/lib/test" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="/home/floodric/Downloads/dropbox-android-sdk-1.5.3/lib" key="org.eclipse.jdt.ui.last.external.project"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="true" key="group_libraries"/>
 		<item value="false" key="linkWithEditor"/>
@@ -11,9 +13,12 @@
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>
+	<section name="BuildPathsPropertyPage">
+		<item value="2" key="pageIndex"/>
+	</section>
 	<section name="JavaSearchPage">
 		<item value="false" key="CASE_SENSITIVE"/>
-		<item value="11" key="INCLUDE_MASK"/>
+		<item value="15" key="INCLUDE_MASK"/>
 		<item value="0" key="HISTORY_SIZE"/>
 	</section>
 	<section name="quick_assist_proposal_size">

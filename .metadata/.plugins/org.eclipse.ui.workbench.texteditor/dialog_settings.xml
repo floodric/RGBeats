@@ -2,20 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="316" key="DIALOG_WIDTH"/>
-		<item value="58" key="DIALOG_Y_ORIGIN"/>
-		<item value="474" key="DIALOG_HEIGHT"/>
-		<item value="526" key="DIALOG_X_ORIGIN"/>
+		<item value="97" key="DIALOG_Y_ORIGIN"/>
+		<item value="558" key="DIALOG_HEIGHT"/>
+		<item value="792" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
 		<item value="false" key="isRegEx"/>
-		<item value="false" key="casesensitive"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
+		<item value="Toast." key="selection"/>
 		<list key="findhistory">
+			<item value="Toast."/>
+			<item value="Toast"/>
+			<item value="savePic"/>
+			<item value="savePicture"/>
+			<item value="colors[0]=&apos;G&apos;"/>
+			<item value="sp."/>
+			<item value="sp"/>
+			<item value="dropbox"/>
 		</list>
 		<list key="replacehistory">
+			<item value="//Toast."/>
+			<item value="//sp."/>
+			<item value="//sp"/>
+			<item value="= &apos;R&apos;;"/>
+			<item value="= &apos;G&apos;;"/>
+			<item value="= &apos;B&apos;"/>
+			<item value="== &apos;B&apos;"/>
+			<item value="== &apos;G&apos;"/>
 		</list>
 	</section>
 </section>

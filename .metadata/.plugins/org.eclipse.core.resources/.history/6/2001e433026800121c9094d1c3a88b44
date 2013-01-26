@@ -1,0 +1,149 @@
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#88BB40"
+    android:id="@+id/al"
+    tools:context=".MainActivity" >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:id="@+id/rl">
+
+    <ImageView 
+        android:id="@+id/newPicture1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "200dp"
+        android:background="@android:color/transparent" />
+    
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="160dp"
+        android:src="@drawable/camera_button" />
+    
+    <ImageView 
+        android:id="@+id/pause1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "200dp"
+        android:background="@android:color/transparent" />
+    
+    <ImageView 
+        android:id="@+id/stop1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "200dp"
+        android:background="@android:color/transparent" />
+    
+    <ImageView 
+        android:id="@+id/newPicture2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "200dp"
+        android:background="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_marginTop="275dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/camera_button" />
+    
+    <ImageView 
+        android:id="@+id/play2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "200dp"
+        android:background="@android:color/transparent" />
+    
+    <ImageView 
+        android:id="@+id/pause2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "200dp"
+        android:background="@android:color/transparent" />
+    
+    <ImageView 
+        android:id="@+id/stop2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "200dp"
+        android:background="@android:color/transparent" />
+    
+    <ImageView 
+        android:id="@+id/newPicture3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "200dp"
+        android:background="@android:color/transparent" />
+    
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_marginTop="390dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/camera_button" />
+    
+    <ImageView 
+        android:id="@+id/play3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "200dp"
+        android:background="@android:color/transparent" />
+    
+    <ImageView 
+        android:id="@+id/pause3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "200dp"
+        android:background="@android:color/transparent" />
+    
+    <ImageView 
+        android:id="@+id/stop3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "200dp"
+        android:background="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/play1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/newPicture1"
+        android:layout_marginRight="77dp"
+        android:background="@android:color/transparent" />
+
+</RelativeLayout>
+
+<ImageView
+    android:id="@+id/header"
+    android:layout_width="356dp"
+    android:layout_height="wrap_content"
+    android:layout_x="-19dp"
+    android:layout_y="-22dp"
+    android:src="@drawable/header" />
+
+<ImageView
+    android:id="@+id/spacer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_x="1dp"
+    android:layout_y="-13dp"
+    android:src="@drawable/spacer" />
+
+</AbsoluteLayout>

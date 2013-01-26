@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="com.example.rgbeats.R.id"/>
 <fullyQualifiedTypeName name="android.media.AudioManager"/>
 <fullyQualifiedTypeName name="android.content.res.AssetManager"/>
 <fullyQualifiedTypeName name="android.media.SoundPool.OnLoadCompleteListener"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="android.net.Uri"/>
+<fullyQualifiedTypeName name="android.database.Cursor"/>
+<fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="android.graphics.Bitmap.CompressFormat"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.DropboxAPI"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.android.AndroidAuthSession"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.session.AppKeyPair"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.session.AccessTokenPair"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.exception.DropboxUnlinkedException"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.exception.DropboxException"/>
+<fullyQualifiedTypeName name="android.os.DropBoxManager.Entry"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.DropboxAPI.DropboxLink"/>
+<fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
+<fullyQualifiedTypeName name="android.widget.RelativeLayout"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.R.color"/>
+<fullyQualifiedTypeName name="com.example.rgbeats.R.drawable"/>
+<fullyQualifiedTypeName name="android.os.Environment"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.session.Session"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.session.Session.AccessType"/>
+<fullyQualifiedTypeName name="android.provider.MediaStore"/>
+<fullyQualifiedTypeName name="android.provider.MediaStore.Images"/>
+<fullyQualifiedTypeName name="android.provider.MediaStore.Images.Media"/>
 </qualifiedTypeNameHistroy>

@@ -29,20 +29,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- 
-        <activity
+        
+        <!-- <activity
 	      android:name="com.dropbox.client2.android.AuthActivity"
 	      android:launchMode="singleTask"
 	      android:configChanges="orientation|keyboard">
       		<intent-filter>
-        		<!-.- Change this to be db- followed by your app key -.->
+        		<!-f- Change this to be db- followed by your app key -f->
         		<data android:scheme="db-86w2vzys3h583yc" />
         		<action android:name="android.intent.action.VIEW" />
         		<category android:name="android.intent.category.BROWSABLE"/>
         		<category android:name="android.intent.category.DEFAULT" />
       		</intent-filter>
-    	</activity>
-    	-->
+    	</activity>-->
+    	
     </application>
 
 </manifest>
